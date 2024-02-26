@@ -1,4 +1,5 @@
 import csv
+
 with open('game.csv', encoding='utf8') as file:
     reader = list(csv.reader(file, delimiter='$'))[1:]
     ans = []
@@ -7,13 +8,8 @@ with open('game.csv', encoding='utf8') as file:
         for gameName, characters, nameError, date in reader:
             if name == characters:
                 ans.append(gameName)
-        print(*ans[:5])
-        break
-    if len(ans) == 0:
-        print('Этого персонажа не существует')
-
+                print(*ans[:5])
+                break
+        else:
 
         name = input()
-
-
-
